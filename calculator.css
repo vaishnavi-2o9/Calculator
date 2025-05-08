@@ -1,0 +1,111 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    background: #222831;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    user-select: none;
+    padding: 10px;
+  }
+  .calculator {
+    background: #393E46;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    width: 320px;
+    max-height: 600px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: minmax(120px, auto) repeat(5, 60px);
+    gap: 12px;
+    padding: 20px;
+  }
+  /* Display */
+  .output {
+    grid-column: 1 / -1;
+    background: #222831;
+    border-radius: 15px;
+    padding: 15px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.prev-display {
+  color: #AAAAAA;
+  font-size: 1.1rem;
+  min-height: 26px;
+  opacity: 0.8;
+}
+.curr-display {
+  color: #eeeeee;
+  font-size: 2.4rem;
+  min-height: 40px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+/* Buttons */
+button {
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  cursor: pointer;
+  transition: 0.2s ease;
+  color: #222831;
+  user-select: none;
+}
+    button:active {
+        transform: scale(0.95);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.6);
+      }
+      button.number {
+        background: #eeeeee;
+      }
+      button.operation {
+        background: #00adb5;
+        color: #eeeeee;
+      }
+      button.clear {
+        background: #ff5722;
+        color: white;
+        font-weight: 700;
+      }
+      button.delete {
+        background: #ff7043;
+        color: #fff;
+        font-weight: 700;
+      }
+    button.equal {
+        background: #00adb5;
+        color: white;
+        font-weight: 700;
+        grid-column: span 2;
+      }
+      button.span-2 {
+        grid-column: span 2;
+      }
+      /* Responsive for 350 width and max 600 height */
+      @media (max-width: 350px) {
+        .calculator {
+          width: 100%;
+          padding: 15px;
+          grid-template-rows: minmax(100px, auto) repeat(5, 50px);
+        }
+        .curr-display {
+          font-size: 2rem;
+        }
+        button {
+            font-size: 1.2rem;
+            border-radius: 12px;
+          }
+        }
+      
